@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :orders
+  # match '/users/sign_in', {via: => :get, :to => ''}
+  # match 'users/:id/orders' => 'users#show', { via: => :get, to => 'orders#restaurant' }
+
+  # match 'orders/:id', { :via => :get, :to => 'orders#Diner' }
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
