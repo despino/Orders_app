@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
+  root "welcome#index"
+  #get '/' => 'welcome#index'
+  #match '/', {:via => :get, :to => 'groups#index'}
+  resources :groups
   devise_for :users
   resources :orders
-  # match '/users/sign_in', {via: => :get, :to => ''}
+
+
+
+  # match '/users/groups', {via: => :get, :to => 'groups#show'}
   # match 'users/:id/orders' => 'users#show', { via: => :get, to => 'orders#restaurant' }
 
   # match 'orders/:id', { :via => :get, :to => 'orders#Diner' }
