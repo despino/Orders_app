@@ -1,14 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Orders</h1>
 
 <table>
   <thead>
     <tr>
       <th>Restaurant</th>
-      <th>Menu item</th>
-      <th>Alterations</th>
-      <th>Diner</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,9 +13,6 @@
     <% @orders.each do |order| %>
       <tr>
         <td><%= order.Restaurant %></td>
-        <td><%= order.Menu_Item %></td>
-        <td><%= order.Alterations %></td>
-        <td><%= order.Diner %></td>
         <td><%= link_to 'Show', order %></td>
         <td><%= link_to 'Edit', edit_order_path(order) %></td>
         <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>

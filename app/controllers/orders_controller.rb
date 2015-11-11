@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
   def index
     # @orders = Order.where(:)
     # @orders = current_user.orders
-
+    # @orders = Order.diner_name
     @orders = Order.all
   end
 

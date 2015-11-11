@@ -8,7 +8,8 @@
 
 <% @group.group_members.each do |group_member| %>
   <% if group_member.diner_name.present? %>
-    Diner Name: <%= group_member.diner_name %>
+    Diner Name: <%= group_member.diner_name %> |
+    <%= link_to 'Add Order', new_order_path %>
     <br>
   <% end %>
 <% end %>
@@ -17,4 +18,4 @@
 <br>
 
 <%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
+<%= link_to 'Back', groups_path %> |
