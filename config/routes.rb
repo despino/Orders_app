@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  resources :group_members
   root "welcome#index"
   #get '/' => 'welcome#index'
   #match '/', {:via => :get, :to => 'groups#index'}
   resources :groups
   devise_for :users
   resources :orders
+  # match 'users/:id', {:via => :post, :to => 'groups#user_id'}
+
 
 
 

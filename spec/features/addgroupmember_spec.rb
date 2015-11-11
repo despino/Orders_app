@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
- it "should be able to sign up and create a group" do
+ it "should be able to sign up,create a group, and a group member to that group" do
    visit '/'
    click_link 'Sign Up'
    fill_in 'Email', :with => "Chuck.Norris@gmail.com"
@@ -13,6 +13,9 @@ RSpec.describe User, type: :model do
    fill_in 'Group name', :with => "Anything, it doesn't matter."
    click_button 'Create Group'
    page.should have_content "Group was successfully created."
+   fill_in 'Add Diner', :with => "Tom"
+   click_button "Add"
+   page.should have_content "Group member was successfully created."
 
- end
+  end
 end

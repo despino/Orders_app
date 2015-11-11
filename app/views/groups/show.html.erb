@@ -5,5 +5,16 @@
   <%= @group.group_name %>
 </p>
 
+
+<% @group.group_members.each do |group_member| %>
+  <% if group_member.diner_name.present? %>
+    Diner Name: <%= group_member.diner_name %>
+    <br>
+  <% end %>
+<% end %>
+<br>
+<%= render partial: 'group_members/form' %>
+<br>
+
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>
