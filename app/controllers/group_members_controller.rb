@@ -25,7 +25,7 @@ class GroupMembersController < ApplicationController
   # POST /group_members.json
   def create
     @group_member = GroupMember.new(group_member_params)
-    # @group_member.group_id = current_group.id
+    # @group_member.group_id = groups.id
     respond_to do |format|
       if @group_member.save
         format.html { redirect_to @group_member.group, notice: 'Group member was successfully created.' }
@@ -60,6 +60,29 @@ class GroupMembersController < ApplicationController
       format.json { head :no_content }
     end
   end
+  # @group_member = GroupMember.new(params[:group_member])
+  # @group = Group.find(params[:group_id])
+  # @group.group_members << @group_member
+  def new_order
+    @order = Order.new
+    @group_member = GroupMember.find(params[:group_members_id])
+    @group_member.orders << @order
+  end
+
+  def create_order
+    @order = Order.new(order_params)
+    @group_member = GroupMember.find(params[:group_members_id])
+    @group_member.orders << @order
+
+    respond_to do |format|
+      if @order.save
+          format.html { redirect_to group_path(@group_member.group), notice: 'Order was successfully updated.' }
+      else
+        # TODO: fix me
+        redirect_to '/groups'
+      end
+    end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -69,6 +92,11 @@ class GroupMembersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def group_member_params
-      params.require(:group_member).permit(:diner_name, :group_id)
+      #params.require(:group_member).permit(:group_members_id, :order)
     end
+
+    def order_params
+      params.require(:order).permit(:Restaurant, :Menu_Item, :Alterations, :Diner)
+    end
+
 end

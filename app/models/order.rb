@@ -1,3 +1,4 @@
 class Order < ActiveRecord::Base
-  belongs_to :group_member 
+  validates :Restaurant, presence: true
+  belongs_to :group_member, :required => true
 end
