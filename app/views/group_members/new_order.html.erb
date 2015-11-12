@@ -1,6 +1,8 @@
+<h1>New Order</h1>
 
 
-<%= form_for(@order, :url => "/group_member" + @group_member.id.to_s + "/new_order") do |f| %>
+
+<%= form_for(@order, :url => "/group_members/" + @group_member.id.to_s + "/create_order") do |f| %>
   <% if @order.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
@@ -17,20 +19,21 @@
     <%= f.label :Restaurant %><br>
     <%= f.text_field :Restaurant %>
   </div>
+
   <div class="field">
     <%= f.label :Menu_Item %><br>
     <%= f.text_field :Menu_Item %>
   </div>
+
   <div class="field">
     <%= f.label :Alterations %><br>
     <%= f.text_area :Alterations %>
   </div>
-YYYYYYYYY
-
-<%= f.hidden_field :group_member_id %>
-
 
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+
+<%= link_to 'Back', orders_path %>

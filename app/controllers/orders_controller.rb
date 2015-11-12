@@ -30,7 +30,11 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
-
+    @group_member = GroupMember.find(params[:group_member_id])
+    @order.group_member_id << @group_member
+    # @order = Order.new(params[:order])
+    # @group_member = GroupMember.find(params[:id])
+    # @order.group_member_id << @group_member
     respond_to do |format|
       if @order.save
         format.html { redirect_to @order, notice: 'Order was successfully created.' }

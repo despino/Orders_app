@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
+  # URL get /group_members/17/new_order will call the new_order method in the GroupMembersController class
+  match '/group_members/:group_members_id/new_order', {:via => :get, :to => 'group_members#new_order'}
+  match '/group_members/:group_members_id/create_order', {:via => :post, :to => 'group_members#create_order'}
   resources :group_members
+
   root "welcome#index"
   #get '/' => 'welcome#index'
   #match '/', {:via => :get, :to => 'groups#index'}
+
+  # URL get /groups/17/new_group_member will call the new_group_member method in the GroupsController class
+  match '/groups/:group_id/new_group_member', {:via => :post, :to => 'groups#new_group_member'}
   resources :groups
   devise_for :users
   resources :orders
