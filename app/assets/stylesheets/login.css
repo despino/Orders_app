@@ -1,0 +1,23 @@
+#login {
+  position: center;
+  text-align: center;
+  background-color: #777;
+  margin-top: 200px;
+  margin-left: 270px;
+  margin-right: 270px;
+  padding-bottom: 50px;
+  color:black;
+  border-radius: 5%;
+}
+
+input button {
+  background-color: red;
+}
+
+#bodyLogin {
+  background-color: #ffeecc;
+}
+
+.devise a {
+  color:black;
+}
