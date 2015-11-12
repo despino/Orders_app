@@ -23,4 +23,12 @@
 
 <br>
 
-<%= link_to 'New Order', new_order_path %>
+<%= link_to 'New Order', new_order_path %> |
+XXXXXXX
+<br/>
+<%= @orders.first %>
+<br/>
+<%= @orders.first.group_member %>
+<br/>
+< % = link_to 'Back', '/groups/'+@orders.first.group_member.group.id.to_s %> |
+<%= link_to 'Back', groups_path %>

@@ -62,6 +62,22 @@ class GroupsController < ApplicationController
     end
   end
 
+  def new_group_member
+    @group = Group.find(params[:group_id])
+    @group_member = @group.group_members.build(params[:group_member])
+    
+    respond_to do |format|
+      if @group_member.save
+          format.html { redirect_to @group, notice: 'Group Member was successfully added.' }
+          format.json { render :show, status: :created, location: @group }
+      else
+          format.html { render 'index.html.erb' }
+          format.json { render json: @group.errors, status: :unprocessable_entity }
+      end
+    end
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_group
@@ -70,6 +86,13 @@ class GroupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def group_params
-      params.require(:group).permit(:group_name, :user_id)
+      # params.require(:group_member).permit!
+      params.require(:group).permit!
+      #params.require(:group_member).permit(:group_member, :diner_name)
+      #params.require(:group).permit(:group_name, :user_id, :group_member, :group_id)
     end
+    def group_member_params
+      params.require(:group_member).permit!
+    end
+
 end

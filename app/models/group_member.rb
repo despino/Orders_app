@@ -1,6 +1,6 @@
 class GroupMember < ActiveRecord::Base
   validates :diner_name, presence: true
-  belongs_to :group
+  belongs_to :group, :required => true
   has_many :orders
 
 end
