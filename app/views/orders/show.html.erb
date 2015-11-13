@@ -21,7 +21,7 @@
       <p>
         <strong>Rate your meal:</strong>
       </p>
-      <%= rating_for @order, "Food", :path => 'star_icons', :half_show => false, :space => true, :order_avg => false %>
+      <%= rating_for @order, "Menu_Item", :disable_after_rate => false, :half_show => false, :space => true, :order_avg => false %>
       <br>
     <% end %>
   </div>
