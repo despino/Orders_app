@@ -13,7 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'devise', '~> 3.5', '>= 3.5.2'
 gem 'shareable'
-
+gem 'ratyrate'
 
 
 group :development, :test do
