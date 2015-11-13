@@ -20,6 +20,7 @@ class GroupsController < ApplicationController
 
   # GET /groups/1/edit
   def edit
+
   end
 
   # POST /groups
@@ -71,8 +72,8 @@ class GroupsController < ApplicationController
           format.html { redirect_to @group, notice: 'Group Member was successfully added.' }
           format.json { render :show, status: :created, location: @group }
       else
-          format.html { render 'index.html.erb' }
-          format.json { render json: @group.errors, status: :unprocessable_entity }
+          format.html { render '/groups/show.html.erb'  }
+          # format.json { render json: @group_member.errors, status: :unprocessable_entity }
       end
     end
 

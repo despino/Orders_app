@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
- it "should be able to sign up,create a group, and add a group member to that group" do
+ it "should be able to destroy group " do
    visit '/'
    click_link 'Sign Up'
    fill_in 'Email', :with => "Chuck.Norris@gmail.com"
@@ -16,6 +16,17 @@ RSpec.describe User, type: :model do
    fill_in 'Add Diner', :with => "Tom"
    click_button "Add"
    page.should have_content "Group Member was successfully added."
+   click_link 'Add Order'
+   fill_in 'Restaurant', :with => 'Jack in the Box'
+   fill_in 'Menu item', :with => 'Hamburger'
+   fill_in 'Alterations', :with => 'no lettuce'
+   click_button 'Create Order'
+   page.should have_content 'Order was successfully updated'
+   click_link 'Back'
+   page.should have_content 'Listing Groups'
+   click_link 'Destroy'
+   page.should have_content 'Group was successfully destroyed'
+
 
   end
 end

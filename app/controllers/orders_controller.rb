@@ -6,12 +6,10 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    # @orders = Order.where(:)
-    # @orders = current_user.orders
-    # @orders = Order.diner_name
-    # @groups = current_user.groups
-    #@group_member =
-    @orders = Order.all
+    if @orders.nil?
+      @orders = Order.all
+    end
+
   end
 
   # GET /orders/1
@@ -21,31 +19,34 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
-    @order = Order.new
+    render '/views/group_members/new_order.html.erb'
   end
 
   # GET /orders/1/edit
   def edit
+    render '/views/orders/edit.html.erb'
   end
 
   # POST /orders
   # POST /orders.json
   def create
-    @order = Order.new(order_params)
-    @group_member = GroupMember.find(params[:group_member_id])
-    @order.group_member_id << @group_member
-    # @order = Order.new(params[:order])
-    # @group_member = GroupMember.find(params[:id])
+    # @order = Order.new(order_params)
+    # @group_member = GroupMember.find(params[:group_member_id])
     # @order.group_member_id << @group_member
-    respond_to do |format|
-      if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
-        format.json { render :show, status: :created, location: @order }
-      else
-        format.html { render :new }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
-    end
+    # # @order = Order.new(params[:order])
+    # # @group_member = GroupMember.find(params[:id])
+    # # @order.group_member_id << @group_member
+    # respond_to do |format|
+    #   if @order.save
+    #     format.html { redirect_to @order, notice: 'Order was successfully created.' }
+    #     format.json { render :show, status: :created, location: @order }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @order.errors, status: :unprocessable_entity }
+    #   end
+    # end
+    render '/views/group_members/new_order.html.erb'
+
   end
 
   # PATCH/PUT /orders/1
@@ -65,9 +66,10 @@ class OrdersController < ApplicationController
   # DELETE /orders/1
   # DELETE /orders/1.json
   def destroy
+    @group = @order.group_member.group
     @order.destroy
     respond_to do |format|
-      format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
+      format.html { redirect_to @group, notice: 'Order was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -10,7 +10,9 @@
   <% if group_member.diner_name.present? %>
     Diner Name: <%= group_member.diner_name %> |
     <%= link_to 'Add Order', "/group_members/" + group_member.id.to_s + "/new_order" %> |
-    <%= link_to 'View Orders', "/group_members/" + group_member.id.to_s + "/orders" %>
+    <% if !group_member.orders.empty? %>
+     <%= link_to 'View Orders', "/group_members/" + group_member.id.to_s + "/orders" %>
+    <% end %>
     <br>
   <% end %>
 <% end %>
@@ -40,5 +42,5 @@
 <% end %>
 
 
-<%= link_to 'Edit', edit_group_path(@group) %> |
+<!-- <%= link_to 'Edit', edit_group_path(@group) %> --> |
 <%= link_to 'Back', groups_path %> |

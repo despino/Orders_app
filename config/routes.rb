@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   # URL get /group_members/17/new_order will call the new_order method in the GroupMembersController class
   match '/group_members/:group_members_id/new_order', {:via => :get, :to => 'group_members#new_order'}
+
+  # match '/group_members/:group_members_id/orders', {:via => :get, :to => 'group_members#new_order'}
+
   match '/group_members/:group_members_id/create_order', {:via => :post, :to => 'group_members#create_order'}
   # get order for specific group member: http://localhost:3000/group_members/5/orders
   match '/group_members/:group_members_id/orders', {:via => :get, :to => 'group_members#orders'}

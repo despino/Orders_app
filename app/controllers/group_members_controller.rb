@@ -78,8 +78,7 @@ class GroupMembersController < ApplicationController
       if @order.save
           format.html { redirect_to group_path(@group_member.group), notice: 'Order was successfully updated.' }
       else
-        # TODO: fix me
-         format.html { render 'orders/edit.html.erb' }
+         format.html { render 'new_order.html.erb' }
       end
     end
   end
