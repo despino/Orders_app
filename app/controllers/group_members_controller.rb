@@ -64,9 +64,9 @@ class GroupMembersController < ApplicationController
   # @group = Group.find(params[:group_id])
   # @group.group_members << @group_member
   def new_order
-    @order = Order.new
     @group_member = GroupMember.find(params[:group_members_id])
-    @group_member.orders << @order
+    @order = Order.new
+    render 'new_order.html.erb'
   end
 
   def create_order
@@ -79,9 +79,15 @@ class GroupMembersController < ApplicationController
           format.html { redirect_to group_path(@group_member.group), notice: 'Order was successfully updated.' }
       else
         # TODO: fix me
-        redirect_to '/groups'
+         format.html { render 'orders/edit.html.erb' }
       end
     end
+  end
+
+  def orders
+    @group_member = GroupMember.find(params[:group_members_id])
+    @orders = @group_member.orders
+    render 'orders/index.html.erb'
   end
 
   private

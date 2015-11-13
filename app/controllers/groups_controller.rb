@@ -65,7 +65,7 @@ class GroupsController < ApplicationController
   def new_group_member
     @group = Group.find(params[:group_id])
     @group_member = @group.group_members.build(params[:group_member])
-    
+
     respond_to do |format|
       if @group_member.save
           format.html { redirect_to @group, notice: 'Group Member was successfully added.' }
