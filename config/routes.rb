@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
   # URL get /group_members/17/new_order will call the new_order method in the GroupMembersController class
   match '/group_members/:group_members_id/new_order', {:via => :get, :to => 'group_members#new_order'}
 
