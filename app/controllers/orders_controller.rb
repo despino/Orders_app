@@ -9,6 +9,8 @@ class OrdersController < ApplicationController
     # @orders = Order.where(:)
     # @orders = current_user.orders
     # @orders = Order.diner_name
+    # @groups = current_user.groups
+    #@group_member =
     @orders = Order.all
   end
 
