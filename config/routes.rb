@@ -17,7 +17,10 @@ Rails.application.routes.draw do
   # URL get /groups/17/new_group_member will call the new_group_member method in the GroupsController class
   match '/groups/:group_id/new_group_member', {:via => :post, :to => 'groups#new_group_member'}
   resources :groups
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  # devise_scope :user do
+  #   delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+  # end
   resources :orders
   # match 'users/:id', {:via => :post, :to => 'groups#user_id'}
 
