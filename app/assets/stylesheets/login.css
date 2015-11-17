@@ -1,7 +1,7 @@
 #login {
   position: center;
   text-align: center;
-  background-color: #777;
+  background-color: rgba(255,255,255,0.7);
   margin-top: 200px;
   margin-left: 270px;
   margin-right: 270px;
@@ -15,7 +15,7 @@ input button {
 }
 
 #bodyLogin {
-  background-color: #ffeecc;
+  background-color: #e5e5e5;
 }
 
 .devise a {

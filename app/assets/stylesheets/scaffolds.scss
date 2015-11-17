@@ -1,15 +1,18 @@
 body {
-  background-color: #fff;
+  background-color: #ffeecc;
+  background: url(../img/banner.jpeg) no-repeat center center;
+  background-size: cover;
   color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
+  font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
 
 p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
+  font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
   line-height: 18px;
+
 }
 
 pre {
@@ -70,4 +73,31 @@ div {
     font-size: 12px;
     list-style: square;
   }
+}
+
+.gray_box {
+  position: center;
+  text-align: center;
+  background-color: rgba(255,255,255,0.7);
+  margin-top: 200px;
+  margin-left: 270px;
+  margin-right: 270px;
+  padding-bottom: 50px;
+  color:black;
+  border-radius: 5%;
+}
+
+.index_listing {
+  color: #7f7f7f;
+}
+
+.table-responsive{
+  font-size:15px;
+}
+ tbody {
+
+    border-spacing: 10px;
+ }
+.table {
+  text-align: left;
 }
