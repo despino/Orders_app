@@ -1,28 +1,13 @@
-== README
+== Orders App README
+The Orders App, known as OrderOut is an App for storing all your friends, groups, and family members preferences and orders to Restaurants. The idea is that if one person in your family has to pick up food for the family, they will know just what to order everyone in just one easy tool. You can search and sort by person and restaurant, AND rate orders and restaurants. This app is still in development. Stay tuned!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Features: Ruby v.4, Ruby on Rails, HTML, CSS, Javascript, JQuery, JSON, AJAX, GEMS, PostgreSQL, RSPEC~Testing;
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Database Schemas:
+Users
+Groups
+Group Members
+Orders
+Ratings
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
