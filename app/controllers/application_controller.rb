@@ -6,5 +6,13 @@ class ApplicationController < ActionController::Base
   # def after_sign_in_path_for(resource)
   #   new_session_path('orders')
   # end
+  add_breadcrumb "My Groups", :root_path, :options => { :title => "My Groups" }
+  # add_breadcrumb "Group Members", :group_path, :options => { :title => "Group Members" }
 
+
+  def index
+    add_breadcrumb "index", index_path, :title => "Back to My Groups"
+    # add_breadcrumb "Group Members", group_path, :title => "Back to the Groups"
+
+  end
 end
