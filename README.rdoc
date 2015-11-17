@@ -1,6 +1,5 @@
 == Orders App README
 The Orders App, known as OrderOut is an App for storing all your friends, groups, and family members preferences and orders to Restaurants. The idea is that if one person in your family has to pick up food for the family, they will know just what to order everyone in just one easy tool. You can search and sort by person and restaurant, AND rate orders and restaurants. This app is still in development. Stay tuned!
-<img src="https://cloud.githubusercontent.com/assets/11559575/11202867/cd9cc074-8ca1-11e5-93a6-836644d9040c.png"></img>
 
 Features: Ruby v.4, Ruby on Rails, HTML, CSS, Javascript, JQuery, JSON, AJAX, GEMS, PostgreSQL, RSPEC~Testing;
 
