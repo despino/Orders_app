@@ -15,7 +15,7 @@ gem 'devise', '~> 3.5', '>= 3.5.2'
 gem 'shareable'
 gem 'ratyrate'
 gem 'omniauth-facebook'
-
+gem 'omniauth-twitter'
 
 
 
