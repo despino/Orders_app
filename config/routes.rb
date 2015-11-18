@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   match '/groups/:group_id/new_group_member', {:via => :post, :to => 'groups#new_group_member'}
   resources :groups
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  
   # devise_scope :user do
   #   delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
   # end

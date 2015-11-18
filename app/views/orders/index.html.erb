@@ -1,34 +1,37 @@
 <p id="notice"><%= notice %></p>
 <div class="gray_box">
-<p>
-  <strong>Diner's Orders:</strong>
-    <%= @group_member.diner_name %>
+<div class="index_listing">
+  <p>
+    <%= @group_member.diner_name %>'s
+    <strong>Orders</strong>
 
-</p>
 
+  </p>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Restaurant</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="table-repsonsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Restaurant</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
 
-  <tbody>
-      <% @orders.each do |order| %>
-        <tr>
-            <td><%= order.Restaurant %></td>
-            <td><%= link_to 'Show Order', order %></td>
-            <!-- <td><%= link_to 'Edit', edit_order_path(order) %></td> -->
-            <td><%= link_to 'Delete Order', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-  </tbody>
-</table>
+    <tbody>
+        <% @orders.each do |order| %>
+          <tr>
+              <td><%= order.Restaurant %></td>
+              <td class="col-sm-2"><%= link_to 'Show Order', order %></td>
+              <!-- <td><%= link_to 'Edit', edit_order_path(order) %></td> -->
+              <td class="col-sm-2"><%= link_to 'Delete Order', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+    </tbody>
+  </table>
 
-<br>
+  <br>
 
-<%= link_to 'New Order', "/group_members/" + @group_member.id.to_s + "/new_order" %> |
-<%= link_to 'Back', '/groups/'+@orders.first.group_member.group.id.to_s %> |
+    <%= link_to 'New Order', "/group_members/" + @group_member.id.to_s + "/new_order" %> |
+    <%= link_to 'Back', '/groups/'+@orders.first.group_member.group.id.to_s %> |
 </div>

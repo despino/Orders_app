@@ -1,47 +1,49 @@
-<p id="notice"><%= notice %></p>
-<div class="gray_box">
-<p>
-  <strong>Group name:</strong>
-  <%= @group.group_name %>
-</p>
+<body id="group_name">
+  <p id="notice"><%= notice %></p>
+  <div class="gray_box">
+    <p>
+      <strong>Group name:</strong>
+      <%= @group.group_name %>
+    </p>
 
 
-<% @group.group_members.each do |group_member| %>
-  <% if group_member.diner_name.present? %>
-    Diner Name: <%= group_member.diner_name %> |
-    <%= link_to 'Add Order', "/group_members/" + group_member.id.to_s + "/new_order" %> |
-    <% if !group_member.orders.empty? %>
-     <%= link_to 'View Orders', "/group_members/" + group_member.id.to_s + "/orders" %>
-    <% end %>
-    <br>
-  <% end %>
-<% end %>
-
-
-<br>
-
-<%= form_for(@group_member, :url => "/groups/" + @group.id.to_s + "/new_group_member") do |f| %>
-  <% if @group_member.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@group_member.errors.count, "error") %> prohibited this group_member from being saved:</h2>
-
-      <ul>
-      <% @group_member.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+    <% @group.group_members.each do |group_member| %>
+      <% if group_member.diner_name.present? %>
+        Diner Name: <%= group_member.diner_name %> |
+        <%= link_to 'Add Order', "/group_members/" + group_member.id.to_s + "/new_order" %> |
+        <% if !group_member.orders.empty? %>
+         <%= link_to 'View Orders', "/group_members/" + group_member.id.to_s + "/orders" %>
+        <% end %>
+        <br>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <div class="field">
-    <%= f.label :diner_name, 'Add Diner' %><br>
-    <%= f.text_field :diner_name%>
-  </div>
-  <div class="actions">
-    <%= f.submit 'Add' %>
-  </div>
-<% end %>
+    <% end %>
 
 
-<!-- <%= link_to 'Edit', edit_group_path(@group) %> --> |
-<%= link_to 'Back', groups_path %> |
-</div>
+    <br>
+
+    <%= form_for(@group_member, :url => "/groups/" + @group.id.to_s + "/new_group_member") do |f| %>
+      <% if @group_member.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@group_member.errors.count, "error") %> prohibited this group_member from being saved:</h2>
+
+          <ul>
+          <% @group_member.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="field">
+        <%= f.label :diner_name, 'Add Diner' %><br>
+        <%= f.text_field :diner_name%>
+      </div>
+      <div class="actions">
+        <%= f.submit 'Add' %>
+      </div>
+    <% end %>
+
+
+    <!-- <%= link_to 'Edit', edit_group_path(@group) %> --> |
+    <%= link_to 'Back', groups_path %> |
+  </div>
+</body>
