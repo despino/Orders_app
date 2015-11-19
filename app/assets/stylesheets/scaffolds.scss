@@ -47,8 +47,11 @@ div {
 
 .field_with_errors {
   padding: 2px;
-  background-color: red;
+   background-color: red;
   display: table;
+  position: center;
+  text-align: center;
+  margin-left: 250px;
 }
 
 #error_explanation {
@@ -58,6 +61,18 @@ div {
   padding-bottom: 0;
   margin-bottom: 20px;
   background-color: #f0f0f0;
+  margin-left: 250px;
+  position: center;
+  // text-align: center;
+  // background-color: rgba(255,255,255,0.7);
+  // margin-top: 200px;
+  // margin-left: 270px;
+  // margin-right: 270px;
+  // padding-bottom: 50px;
+  // color:black;
+  // border-radius: 5%;
+}
+
 
   h2 {
     text-align: left;
@@ -66,7 +81,7 @@ div {
     font-size: 12px;
     margin: -7px;
     margin-bottom: 0px;
-    background-color: #c00;
+    // background-color: #c00;
     color: #fff;
   }
 
@@ -74,7 +89,7 @@ div {
     font-size: 12px;
     list-style: square;
   }
-}
+
 
 .gray_box {
   position: center;
@@ -91,6 +106,7 @@ div {
 .index_listing {
   color: white;
   text-shadow: 2px 2px 4px  #010;
+  text-align: center;
 }
 
 .table-responsive{

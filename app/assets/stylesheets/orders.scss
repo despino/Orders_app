@@ -4,3 +4,25 @@
 .index_listing{
   font-size: 30px;
 }
+body#orders_index{
+
+    // // background: url(../img/restaurant.jpg) no-repeat center center;
+     background: url(../img/food.jpg) no-repeat center center;
+      background-size: cover;
+    // // color: #333;s
+
+
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    // font-size: 13pΩx;
+    line-height: 18px;
+}
+body#order_show{
+  background: url(../img/water.jpg) no-repeat center center;
+   background-size: cover;
+ // // color: #333;s
+
+
+ font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+ // font-size: 13pΩx;
+ line-height: 18px;
+}

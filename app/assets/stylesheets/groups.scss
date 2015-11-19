@@ -4,17 +4,17 @@
 .index_listing{
   font-size: 30px;
 }
-// body #listing_groups {
-//   background-color: #ffeecc;
-//   background: url(../img/restaurant.jpg) no-repeat center center;
-//   // background: url(../img/banner.jpeg) no-repeat center center;
-//   background-size: cover;
-//   // // color: #333;
-//
-//   font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
-//   // font-size: 13pΩx;
-//   line-height: 18px;
-// }
+body#listing_groups {
+  //background-color: #ffeecc;
+  //background: url(../img/restaurant.jpg) no-repeat center center;
+   background: url(../img/banner.jpeg) no-repeat center center;
+  background-size: cover;
+  // // color: #333;
+
+  font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+  // font-size: 13pΩx;
+  line-height: 18px;
+}
 body#new_group{
     // background-color: #ffeecc;
      background: url(../img/restaurant.jpg) no-repeat center center;
@@ -47,6 +47,13 @@ body#group_name {
   background-size: cover;
   color: #333;
   font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 13pΩx;
+  font-size: 13px;
+  line-height: 18px;
+}
+body#edit_group{
+  background: url(../img/people.jpg) no-repeat center center;
+  background-size: cover;
+  font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 13px;
   line-height: 18px;
 }

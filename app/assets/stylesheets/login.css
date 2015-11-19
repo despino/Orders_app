@@ -15,7 +15,14 @@ input button {
 }
 
 #bodyLogin {
-  background-color: #e5e5e5;
+  /*// background-color: #ffeecc;*/
+   background: url(../img/vintage-table.jpg) no-repeat center center;
+   background-size: cover;
+  /*// color: #333;*/
+  /*font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  line-height: 18px;*/
+  /*background-color: #e5e5e5;*/
 }
 
 .devise a {

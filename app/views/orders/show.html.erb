@@ -1,42 +1,45 @@
+<body id="order_show">
 <p id="notice"><%= notice %></p>
-<div class="gray_box"
-<p>
+<div class="gray_box">
+  <h1 class="index_listing">
   <strong>Restaurant:</strong>
-  <%= @order.Restaurant %>
-</p>
+    <%= @order.Restaurant %>
+  </h1>
 
-<p>
-  <strong>Menu item:</strong>
-  <%= @order.Menu_Item %>
-</p>
+  <p>
+    <strong>Menu item:</strong>
+    <%= @order.Menu_Item %>
+  </p>
 
-<p>
-  <strong>Alterations:</strong>
-  <%= @order.Alterations %>
-</p>
+  <p>
+    <strong>Alterations:</strong>
+    <%= @order.Alterations %>
+  </p>
 
-<div class="row">
-  <div class="col-md-4">
-    <% if current_user %>
-      <p>
-        <strong>Rate your meal:</strong>
-      </p>
-      <%= rating_for @order, "Menu_Item", :disable_after_rate => false, :half_show => false, :space => true, :order_avg => false %>
-      <br>
-    <% end %>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <% if current_user %>
+        <p>
+          <strong>Rate your meal:</strong>
+        </p>
+        <%= rating_for @order, "Menu_Item", :disable_after_rate => false, :half_show => false, :space => true, :order_avg => false %>
+        <br>
+      <% end %>
+    </div>
   </div>
-</div>
 
 
-<br>
-<div>
-  <%= facebook_button %>
-<br><br>
-  <%= twitter_button %>
-</div>
-<br>
-<br>
+  <br>
+  <div>
+    <%= facebook_button %>
+  <br><br>
+    <%= twitter_button %>
+  </div>
+  <br>
+  <br>
 
-<!-- <%= link_to 'Edit', edit_order_path %> | -->
-<%= link_to 'Back', '/group_members/'+ @order.group_member.id.to_s + '/orders' %>
+  <!-- <%= link_to 'Edit', edit_order_path %> | -->
+  <%= link_to 'Back', '/group_members/'+ @order.group_member.id.to_s + '/orders' %>
 </div>
+</body>

@@ -1,16 +1,15 @@
+<body id="orders_index">
 <p id="notice"><%= notice %></p>
 <div class="gray_box">
-<div class="index_listing">
-  <p>
+
+  <h1 class="index_listing">
     <%= @group_member.diner_name %>'s
     <strong>Orders</strong>
+  </h1>
 
-
-  </p>
-</div>
 
 <div class="table-repsonsive">
-  <table class="table">
+  <table class="table table-striped">
     <thead>
       <tr>
         <th>Restaurant</th>
@@ -21,10 +20,10 @@
     <tbody>
         <% @orders.each do |order| %>
           <tr>
-              <td><%= order.Restaurant %></td>
-              <td class="col-sm-2"><%= link_to 'Show Order', order %></td>
+              <td class="col-md-2"><%= order.Restaurant %></td>
+              <td class="col-md-1"><%= link_to 'Show Order', order %></td>
               <!-- <td><%= link_to 'Edit', edit_order_path(order) %></td> -->
-              <td class="col-sm-2"><%= link_to 'Delete Order', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td class="col-md-1"><%= link_to 'Delete Order', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
     </tbody>
@@ -35,3 +34,4 @@
     <%= link_to 'New Order', "/group_members/" + @group_member.id.to_s + "/new_order" %> |
     <%= link_to 'Back', '/groups/'+@orders.first.group_member.group.id.to_s %> |
 </div>
+</body>
