@@ -8,19 +8,32 @@
 </head>
 <body>
   <%= render_breadcrumbs %>
-  <div class="wrapper" id="wrapper">
-     <div id="user_nav">
-       <% if user_signed_in? %>
-         Logged in as <strong><%= current_user.email %></strong>
-         <%= link_to 'Edit Profile', edit_user_registration_path %> |
-         <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-       <% else %>
-         <!-- <%= link_to "Sign Up", new_user_registration_path %> |
-         <%= link_to "Login", new_user_session_path %> -->
-       <% end %>
-     </div>
+  <br>
+  <br>
+  <br>
 
-<%= yield %>
+  <!-- <div class="wrapper" id="wrapper"> -->
+  <div id="container">
+    <div id="rightBlock" class="row">
+      <div class="col-lg-9"></div>
+      <div id="fixed" class="col-lg-3">
+        <div id="user_nav">
+
+          <% if user_signed_in? %>
+          Logged in as <strong><%= current_user.email %></strong> |
+          <%= link_to 'Edit Profile', edit_user_registration_path %> |
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+          <% else %>
+          <!-- <%= link_to "Sign Up", new_user_registration_path %> |
+          <%= link_to "Login", new_user_session_path %> -->
+          <% end %>
+        </div>
+        <!-- </div> -->
+      </div>
+    </div>
+    </div>
+  </div>
+  <%= yield %>
 
 </body>
 </html>
