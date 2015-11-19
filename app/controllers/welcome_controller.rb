@@ -4,7 +4,7 @@ class WelcomeController < ApplicationController
     if user_signed_in?
       redirect_to '/groups'
     else
-      render :file => '/public/myindex.html'
+      render layout: false
     end
   end
 end
