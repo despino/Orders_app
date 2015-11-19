@@ -20,6 +20,7 @@ gem 'breadcrumbs_on_rails'
 
 
 
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -27,6 +28,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers', '~> 3.0', '>= 3.0.1'
+  gem 'simplecov', :require => false, :group => :test
 end
 
 group :development do
