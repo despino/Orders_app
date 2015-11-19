@@ -1,101 +1,78 @@
 <body id="group_name">
-  <p id="notice"><%= notice %></p>
-  <div class="gray_box">
-
-<p id="notice"><%= notice %></p>
-<div class="gray_box">
-<p>
-  <strong>Group name:</strong>
-  <%= @group.group_name %>
-</p>
-
-<!-- Navigation -->
-<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
-    <div class="container topnav">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand topnav" href="#" style="color:#FE642D; font-size: 25px; padding-top:20px;">OrderOut</a>
-        </div>
-        <ul class="breadcrumb" style="text-align:right;">
-          <li style="padding-top:10px;"><a href="/groups/">My Groups</a></li>
-          <li>Group Members</li>
-        </ul>
-    </div>
-    <!-- /.container -->
-</nav>
-
-
-
-<p id="notice"><%= notice %></p>
-<div style="display:inline;">
-  <h1>Group:
-    <%= @group.group_name %>
-  </h1><h5 class="text-muted;"><%= link_to 'Edit Group Name', edit_group_path(@group) %></h5>
-</div>
-
-<br>
-<% @group.group_members.each do |group_member| %>
-  <% if group_member.diner_name.present? %>
-    Diner Name: <%= group_member.diner_name %> |
-    <%= link_to 'Add Order', "/group_members/" + group_member.id.to_s + "/new_order" %> |
-    <% if !group_member.orders.empty? %>
-     <%= link_to 'View Orders', "/group_members/" + group_member.id.to_s + "/orders" %>
-    <% end %>
-    <br>
-    <p class="index_listing">
-      <strong>Group name:</strong>
-      <%= @group.group_name %>
-    </p>
-
-
-    <% @group.group_members.each do |group_member| %>
-      <% if group_member.diner_name.present? %>
-        Diner Name: <%= group_member.diner_name %> |
-        <%= link_to 'Add Order', "/group_members/" + group_member.id.to_s + "/new_order" %> |
-        <% if !group_member.orders.empty? %>
-         <%= link_to 'View Orders', "/group_members/" + group_member.id.to_s + "/orders" %>
-        <% end %>
-        <br>
-      <% end %>
-    <% end %>
-
-
-    <br>
-
-    <%= form_for(@group_member, :url => "/groups/" + @group.id.to_s + "/new_group_member") do |f| %>
-      <% if @group_member.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@group_member.errors.count, "error") %> prohibited this group_member from being saved:</h2>
-
-          <ul>
-          <% @group_member.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
+  <!-- Navigation -->
+  <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+      <div class="container topnav">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand topnav" href="#" style="color:#FE642D; font-size: 25px; padding-top:20px;">OrderOut</a>
+          </div>
+          <ul class="breadcrumb" style="text-align:right;">
+            <li style="padding-top:10px;"><a href="/groups/">My Groups</a></li>
+            <li>Group Members</li>
           </ul>
-        </div>
-      <% end %>
-      <div class="field">
-        <%= f.label :diner_name, 'Add Diner' %><br>
-        <%= f.text_field :diner_name%>
       </div>
-      <div class="actions">
-        <%= f.submit 'Add' %>
-      </div>
-    <% end %>
+      <!-- /.container -->
+  </nav>
+
+<p id="notice"><%= notice %></p>
+<br>
+  <div class="gray_box">
+    <br>
+      <div style="display:inline;">
 
 
-<<<<<<< HEAD
-    <!-- <%= link_to 'Edit', edit_group_path(@group) %> --> |
-    <%= link_to 'Back', groups_path %> |
+          <p class="index_listing">
+            <strong>Group name:</strong>
+            <%= @group.group_name %>
+          </p>
+
+
+          <% @group.group_members.each do |group_member| %>
+            <% if group_member.diner_name.present? %>
+              Diner Name: <%= group_member.diner_name %> |
+              <%= link_to 'Add Order', "/group_members/" + group_member.id.to_s + "/new_order" %> |
+              <% if !group_member.orders.empty? %>
+               <%= link_to 'View Orders', "/group_members/" + group_member.id.to_s + "/orders" %>
+              <% end %>
+              <br>
+            <% end %>
+          <% end %>
+
+
+          <br>
+
+          <%= form_for(@group_member, :url => "/groups/" + @group.id.to_s + "/new_group_member") do |f| %>
+            <% if @group_member.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@group_member.errors.count, "error") %> prohibited this group_member from being saved:</h2>
+                <% else %>
+                <ul>
+                <% @group_member.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+            <div class="field">
+              <%= f.label :diner_name, 'Add Diner' %><br>
+              <%= f.text_field :diner_name%>
+            </div>
+            <div class="actions">
+              <%= f.submit 'Add' %>
+            </div>
+          <% end %>
+
+
+
+        <!-- <%= link_to 'Edit', edit_group_path(@group) %> --> |
+        <%= link_to 'Back', groups_path %> |
+
+    </div>
   </div>
-</body>
-=======
-<%= link_to 'Back', groups_path %> |
 </div>
->>>>>>> 2783404898a27cfa4072f8fee19e8dc64dcb73fc
