@@ -1,40 +1,42 @@
-<div class="gray_box">
-<h1>New Order</h1>
+<body id="new_order">
+  <div class="gray_box">
+  <h1 class="index_listing">New Order</h1>
 
 
 
-<%= form_for(@order, :url => "/group_members/" + @group_member.id.to_s + "/create_order") do |f| %>
-  <% if @order.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+  <%= form_for(@order, :url => "/group_members/" + @group_member.id.to_s + "/create_order") do |f| %>
+    <% if @order.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
 
-      <ul>
-      <% @order.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @order.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :Restaurant %><br>
+      <%= f.text_field :Restaurant %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Menu_Item %><br>
+      <%= f.text_field :Menu_Item %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Alterations %><br>
+      <%= f.text_area :Alterations %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :Restaurant %><br>
-    <%= f.text_field :Restaurant %>
+  <%= link_to 'Back', '/groups/'+ @group_member.group.id.to_s %>
   </div>
-
-  <div class="field">
-    <%= f.label :Menu_Item %><br>
-    <%= f.text_field :Menu_Item %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Alterations %><br>
-    <%= f.text_area :Alterations %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-
-<%= link_to 'Back', '/groups/'+ @group_member.group.id.to_s %>
-</div>
+</body>

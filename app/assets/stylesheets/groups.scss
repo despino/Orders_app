@@ -1,3 +1,59 @@
 // Place all the styles related to the Groups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.index_listing{
+  font-size: 30px;
+}
+body#listing_groups {
+  //background-color: #ffeecc;
+  //background: url(../img/restaurant.jpg) no-repeat center center;
+   background: url(../img/banner.jpeg) no-repeat center center;
+  background-size: cover;
+  // // color: #333;
+
+  font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+  // font-size: 13pΩx;
+  line-height: 18px;
+}
+body#new_group{
+    // background-color: #ffeecc;
+     background: url(../img/restaurant.jpg) no-repeat center center;
+  //   // background: url(../img/banner.jpeg) no-repeat center center;
+    background-size: cover;
+    // color: #333;
+
+    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 13pΩx;
+    line-height: 18px;
+}
+// form#new_group.new_group {
+//   background:clear;
+// }
+// .gray_box {
+//   position: center;
+//   text-align: center;
+//   background-color: rgba(255,255,255,0.7);
+//   margin-top: 200px;
+//   margin-left: 270px;
+//   margin-right: 270px;
+//   padding-bottom: 50px;
+//   color:black;
+//   border-radius: 5%;
+// }
+body#group_name {
+  background-color: #ffeecc;
+  background: url(../img/order_here.jpeg) no-repeat center center;
+//   // background: url(../img/banner.jpeg) no-repeat center center;
+  background-size: cover;
+  color: #333;
+  font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+body#edit_group{
+  background: url(../img/people.jpg) no-repeat center center;
+  background-size: cover;
+  font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}

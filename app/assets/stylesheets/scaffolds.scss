@@ -1,13 +1,14 @@
-body {
-  background-color: #ffeecc;
-  background: url(../img/banner.jpeg) no-repeat center center;
-  background-size: cover;
-  color: #333;
-  font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-}
-
+// body {
+//   background-color: #ffeecc;
+//   background: url(../img/restaurant.jpg) no-repeat center center;
+//   // background: url(../img/banner.jpeg) no-repeat center center;
+//   background-size: cover;
+//   // // color: #333;
+//
+//   font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+//   // font-size: 13pΩx;
+//   line-height: 18px;
+// }
 p, ol, ul, td {
   font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
@@ -46,8 +47,11 @@ div {
 
 .field_with_errors {
   padding: 2px;
-  background-color: red;
+   background-color: red;
   display: table;
+  position: center;
+  text-align: center;
+  margin-left: 250px;
 }
 
 #error_explanation {
@@ -57,6 +61,18 @@ div {
   padding-bottom: 0;
   margin-bottom: 20px;
   background-color: #f0f0f0;
+  margin-left: 250px;
+  position: center;
+  // text-align: center;
+  // background-color: rgba(255,255,255,0.7);
+  // margin-top: 200px;
+  // margin-left: 270px;
+  // margin-right: 270px;
+  // padding-bottom: 50px;
+  // color:black;
+  // border-radius: 5%;
+}
+
 
   h2 {
     text-align: left;
@@ -65,7 +81,7 @@ div {
     font-size: 12px;
     margin: -7px;
     margin-bottom: 0px;
-    background-color: #c00;
+    // background-color: #c00;
     color: #fff;
   }
 
@@ -73,7 +89,7 @@ div {
     font-size: 12px;
     list-style: square;
   }
-}
+
 
 .gray_box {
   position: center;
@@ -88,7 +104,9 @@ div {
 }
 
 .index_listing {
-  color: #7f7f7f;
+  color: white;
+  text-shadow: 2px 2px 4px  #010;
+  text-align: center;
 }
 
 .table-responsive{
@@ -98,6 +116,9 @@ div {
 
     border-spacing: 10px;
  }
-.table {
+.table-striped {
   text-align: left;
+}
+tbody:nth-child(even){
+  background-color: rgba(229,229,229,0.1);
 }
