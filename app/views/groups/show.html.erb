@@ -1,3 +1,4 @@
+
 <p id="notice"><%= notice %></p>
 <div class="gray_box">
 <p>
@@ -5,7 +6,37 @@
   <%= @group.group_name %>
 </p>
 
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+    <div class="container topnav">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand topnav" href="#" style="color:#FE642D; font-size: 25px; padding-top:20px;">OrderOut</a>
+        </div>
+        <ul class="breadcrumb" style="text-align:right;">
+          <li style="padding-top:10px;"><a href="/groups/">My Groups</a></li>
+          <li>Group Members</li>
+        </ul>
+    </div>
+    <!-- /.container -->
+</nav>
 
+
+
+<p id="notice"><%= notice %></p>
+<div style="display:inline;">
+  <h1>Group:
+    <%= @group.group_name %>
+  </h1><h5 class="text-muted;"><%= link_to 'Edit Group Name', edit_group_path(@group) %></h5>
+</div>
+
+<br>
 <% @group.group_members.each do |group_member| %>
   <% if group_member.diner_name.present? %>
     Diner Name: <%= group_member.diner_name %> |
@@ -42,6 +73,5 @@
 <% end %>
 
 
-<!-- <%= link_to 'Edit', edit_group_path(@group) %> --> |
 <%= link_to 'Back', groups_path %> |
 </div>
