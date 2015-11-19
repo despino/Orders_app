@@ -16,6 +16,8 @@ gem 'shareable'
 gem 'ratyrate'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem 'breadcrumbs_on_rails'
+
 
 
 group :development, :test do

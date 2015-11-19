@@ -2,7 +2,6 @@ class OrdersController < ApplicationController
 
   before_filter :authenticate_user!
   before_action :set_order, only: [:show, :edit, :update, :destroy]
-
   # GET /orders
   # GET /orders.json
   def index
@@ -15,6 +14,12 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
+    # @user = User.find(params[:id])
+    # @group = @user.group(params[:id])
+    # @group = Group.find(params[:group_id])
+    # @group_member = @group.group_members.build(params[:group_member])
+    # @group_member = GroupMember.find(params[:group_members_id])
+    # @orders = @group_member.orders
   end
 
   # GET /orders/new
@@ -46,7 +51,6 @@ class OrdersController < ApplicationController
     #   end
     # end
     render '/views/group_members/new_order.html.erb'
-
   end
 
   # PATCH/PUT /orders/1
