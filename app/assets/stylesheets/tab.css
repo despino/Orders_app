@@ -1,13 +1,10 @@
  #fixed {
    bottom: 0;
-   /*border-bottom: 1px solid;
-   border-left:1px solid;*/
+   border-bottom: 1px black solid;
    background-color:#f8f8f8;
    border-radius: 0 0 0 10px;
  }
  #rightBlock {
-   color: none;
-  /*background-color: green;*/
   margin-top: 10px;
   margin-right: 0px;
 
